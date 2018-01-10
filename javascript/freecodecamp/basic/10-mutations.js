@@ -12,26 +12,10 @@
  * Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
  */
 
-function mutation(arr)
- {
-    if(arr[0].length <= arr[1].length){
-      str1 = arr[0].split('');
-      str2 = arr[1].split('');
-      str1.forEach(element => {
-        console.log(element);
-      });
-      console.log(str1);
-      console.log(str2);
-    }else{
-      str1 = arr[0].split('');
-      str2 = arr[1].split('');
-      console.log(str1);
-      console.log(str2);
-      str2.forEach(element => {
-        console.log(str1.indexOf(element));
-      });
-    }
-    return arr[0].lowercase == arr[1].lowercase;
-  }
-  
+function mutation(arr) {
+  return arr[1].toLowerCase().split('').filter((item) => {
+    return arr[0].toLowerCase().indexOf(item) == -1
+  }).length > 0 ? false : true;
+}
+
 console.log(mutation(["floor", "for"]));
