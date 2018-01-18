@@ -14,7 +14,7 @@
 
 function mutation(arr) {
   return arr[1].toLowerCase().split('').filter((item) => {
-    return arr[0].toLowerCase().indexOf(item) == -1
+    return arr[0].toLowerCase().indexOf(item) == -1;
   }).length > 0 ? false : true;
 }
 
