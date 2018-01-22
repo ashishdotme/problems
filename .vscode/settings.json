@@ -1,3 +1,14 @@
 {
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.jsx": "typescriptreact",
+    "__config": "cpp",
+    "__nullptr": "cpp",
+    "exception": "cpp",
+    "initializer_list": "cpp",
+    "new": "cpp",
+    "stdexcept": "cpp",
+    "typeinfo": "cpp"
+  },
+  "python.pythonPath": "/usr/local/opt/python3/bin/python3.6"
 }
