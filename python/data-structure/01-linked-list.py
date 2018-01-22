@@ -7,6 +7,7 @@ Copyright © 2017 ashish.me
 ashishsushilpatel@gmail.com
 """
 
+
 class Node(object):
     """Implementaton of Node """
 
