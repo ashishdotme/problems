@@ -59,14 +59,14 @@ class Queue(object):
 
 if __name__ == '__main__':
     queue_demo = Queue()
-    print("Adding element in queue")
+    print("Add element in queue")
     queue_demo.enqueue(3)
     queue_demo.enqueue(33)
     queue_demo.enqueue(23)
     queue_demo.enqueue(7)
     print("Print the queue")
     queue_demo.display()
-    print("Removing element from the queue")
+    print("Remove element from the queue")
     queue_demo.dequeue()
     print("Print the queue")
     queue_demo.display()
