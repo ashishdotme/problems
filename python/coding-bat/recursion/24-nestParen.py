@@ -6,4 +6,4 @@ def nestParen(str):
 	else:
 		return False
 
-print(nestParen("(((x))"))
+print(nestParen("(((x)))"))
