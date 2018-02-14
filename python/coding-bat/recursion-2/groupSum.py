@@ -1,11 +1,9 @@
-def groupSum(index, arr, num):
-    if index == len(arr):
-        return arr[len(arr) - 1]
-    sum = arr[index] + groupSum(index + 1, arr, num)
-    if sum == num:
+def groupSum(index, arr, total):
+    if total == 0:
         return True
-    else:
-        return False
+    if index >= len(arr):
+        return total == 0
+    return groupSum(index + 1, arr, total - arr[index]) or groupSum(index + 1, arr, total)
 
 
 print(groupSum(0, [2, 4, 8], 10))
