@@ -58,29 +58,66 @@ class BinarySearchTree(object):
 
         return node.data
 
-    def traverse(self):
+    def traverseInorder(self):
         if self.root:
-            self.traverseInOrder(self.root)
-
-    def traverseInOrder(self, node):
+            self.inorder(self.root)
+    
+    def inorder(self, node):
         if node.leftChild:
-            self.traverseInOrder(node.leftChild)
-        
-        print("%s " % node.data)
+            self.inorder(node.leftChild)
+
+        print node.data
 
         if node.rightChild:
-            self.traverseInOrder(node.rightChild)
+            self.inorder(node.rightChild)
+    
+    def traversePreorder(self):
+        if self.root:
+            self.preorder(self.root)
+    
+    def preorder(self, node):
+        
+        print node.data
+
+        if node.leftChild:
+            self.preorder(node.leftChild)
+
+        if node.rightChild:
+            self.preorder(node.rightChild)
+    
+    def traversePostorder(self):
+        if self.root:
+            self.postorder(self.root)
+    
+    def postorder(self, node):
+        
+        if node.leftChild:
+            self.postorder(node.leftChild)
+
+        if node.rightChild:
+            self.postorder(node.rightChild)
+
+        print node.data
+    
+
+
 
 if __name__ == "__main__":
     bst = BinarySearchTree()
+    bst.insert(3)
     bst.insert(1)
     bst.insert(2)
-    bst.insert(3)
+    bst.insert(0)
     bst.insert(4)  
     bst.insert(5)   
+    bst.insert(6)
     print("Lowest value in the binary search tree ->")
     print(bst.getMin())
     print("Largest value in the binary search tree ->")
     print(bst.getMax())
     print("Traversing In Order")
-    print(bst.traverse())
+    bst.traverseInorder()
+    print("Traversing Pre Order")
+    bst.traversePreorder()
+    print("Traversing Post Order")
+    bst.traversePostorder()
