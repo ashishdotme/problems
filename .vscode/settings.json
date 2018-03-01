@@ -10,5 +10,5 @@
     "stdexcept": "cpp",
     "typeinfo": "cpp"
   },
-  "python.pythonPath": "C:\\Python36\\python.exe"
+  "python.pythonPath": "/usr/bin/python2.7"
 }

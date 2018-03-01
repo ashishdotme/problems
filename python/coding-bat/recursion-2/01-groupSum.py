@@ -2,7 +2,7 @@ def groupSum(index, arr, total):
     if total == 0:
         return True
     if index >= len(arr):
-        return total == 0
+        return False
     return groupSum(index + 1, arr, total - arr[index]) or groupSum(index + 1, arr, total)
 
 
