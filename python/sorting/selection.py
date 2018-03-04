@@ -1,12 +1,12 @@
 def selection_sort(arr):
-  for i in range(len(arr)):   #[4,3,2,1]
+  for i in range (len(arr)):
+    value = arr[i]
     min = i
     for j in range(i+1,len(arr)):
       if arr[j] < arr[min]:
         min = j
-    temp = arr[i]
     arr[i] = arr[min]
-    arr[min] = temp
+    arr[min] = value
   return arr
 
-print(selection_sort([3,4,1,2,9,7,8]))
+print(selection_sort([9,11,3,2,5,1,12]))

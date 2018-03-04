@@ -1,11 +1,14 @@
-def bubble_sort(arr):
-  arr2 = []
-  for i in range(len(arr)):
-    for j in range(i,len(arr)):
-      if arr[i] > arr[j]:
-        temp = arr[i]
-        arr[i] = arr[j]
-        arr[j] = temp
+# Insertion sort 
+
+def insertion_sort(arr):
+  for i in range(1,len(arr)):
+    value = arr[i]
+    hole = i
+    while hole > 0 and arr[hole-1] > value:
+      arr[hole] = arr[hole-1]
+      hole = hole - 1
+    arr[hole] = value
   return arr
 
-print(bubble_sort([3,4,1,2]))
+arr = [9,11,3,2,5,1,12]
+print(insertion_sort(arr))
