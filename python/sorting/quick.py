@@ -1,26 +1,19 @@
-def partition(sample, start, end):
-  pivot = sample[end]
-  pivotLoc = start
-  index = start
-  while index < len(sample)-1:
-    if sample[index] <= pivot:
-      temp = arr[pivotLoc]
-      arr[pivotLoc] = arr[index]
-      arr[index] = temp
-      pivotLoc += 1
-    index += 1
-  temp = sample[pivotLoc]
-  sample[pivotLoc] = sample[end]
-  sample[end] = temp
-  return pivotLoc
+def quick_sort(arr):
+    if len(arr) == 0 or len(arr) == 1:
+        return arr
+    lesser = []
+    equal = []
+    greater = []
+    pivot = arr[0]
+    for element in arr:
+        if element < pivot:
+            lesser.append(element)
+        if element == pivot:
+            equal.append(element)
+        if element > pivot:
+            greater.append(element)
+    return quick_sort(lesser) + equal + quick_sort(greater)
 
-def quicksort(sample, start, end):
-  if start >= end:
-    return sample
-  index = partition(sample, start, end)
-  quicksort(sample, start, index-1)
-  quicksort(sample, index+1, end)
-  return sample
 
-arr = [4,2,7,5,1]
-print(quicksort(arr,0, len(arr) - 1))
+arr = [5, 3, 1, 2, 4]
+print(quick_sort(arr))

@@ -1,15 +1,15 @@
-def merge(arr, l, m, r):
-    print(arr[l:r])
+def merge(left, right):
+    return left + right
 
 
-def mergeSort(arr, l, r):
-    if l < r:
-        mid = l + (r - l) / 2
-        mergeSort(arr, l, int(mid))
-        mergeSort(arr, int(mid) + 1, r)
-        merge(arr, l, int(mid), r)
+def mergesort(L):
+    if len(L) < 2:
+        return L
+    middle = int(len(L) / 2)
+    left = mergesort(L[:middle])
+    right = mergesort(L[middle:])
+    out = merge(left, right)
+    return out
 
 
-arr = [12, 11, 13, 5, 6, 7]
-n = len(arr)
-print(mergeSort(arr, 0, n - 1))
+print(mergesort([6, 11, 5, 3]))
