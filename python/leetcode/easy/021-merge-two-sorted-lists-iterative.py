@@ -12,7 +12,7 @@ Merge two sorted linked lists and return it as a new list.
 The new list should be made by splicing together the nodes of the first two lists.
 """
 
-# Time:  O(n * k), k is the length of the common prefix
+# Time:  O(n)
 # Space: O(1)
 
 class ListNode:
@@ -30,20 +30,25 @@ class Solution(object):
 		:type s: str
 		:rtype: bool
 		"""
-		l = ListNode(0)
-		ret = l
+		dummy = l = ListNode(0)
 		while l1 and l2:
-			if l1.val <= l2.val:
-				l.next, l1 = l1, l1.next
+			if l1.val < l2.val:
+				l.next = l1
+				l1 = l1.next
 			else:
-				l.next, l2 = l2, l2.next
+				l.next = l2
+				l2 = l2.next
 			l = l.next
 		l.next = l1 or l2
-		return ret.next
+		return dummy.next
 
 if __name__ == "__main__":
-		l1 = ListNode(0)
-		l1.next = ListNode(1)
-		l2 = ListNode (2)
-		l2.next = ListNode(3)
+		l1 = ListNode(2)
+		l1.next = ListNode(3)
+		l1.next.next = ListNode(4)
+		l1.next.next.next = ListNode(6)
+		l2 = ListNode (1)
+		l2.next = ListNode(5)
+		l2.next.next = ListNode(12)
+		l2.next.next.next = ListNode(14)
 		print(Solution().mergeTwoLists(l1, l2))
